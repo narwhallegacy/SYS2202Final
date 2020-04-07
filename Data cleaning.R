@@ -20,3 +20,7 @@ transit2020 = read.csv("transit_2020.csv", header=TRUE)
 unemploymentYearly = read.csv("Unemployment.csv", header=TRUE)
 unemploymentMonthly = read.csv("Unemployment_monthly.csv", header=TRUE)
 uvaBasketball = read.csv("UVA2019_2020BasketballSeason.csv", header=TRUE)
+
+
+
+#----change datatype of date elements in uvaBasketball-----------------
