@@ -1,0 +1,31 @@
+"","Date","Opponent","Won","Away"
+"1",2019-11-06,"Syracuse",TRUE,TRUE
+"2",2019-11-10,"James Madison",TRUE,FALSE
+"3",2019-11-16,"Columbia",TRUE,FALSE
+"4",2019-11-19,"Vermont",TRUE,FALSE
+"5",2019-11-23,"UMass",TRUE,FALSE
+"6",2019-11-24,"Arizona State",TRUE,FALSE
+"7",2019-11-27,"Maine",TRUE,FALSE
+"8",2019-12-04,"Purdue",FALSE,TRUE
+"9",2019-12-08,"UNC",TRUE,FALSE
+"10",2019-12-18,"Stony Brook",TRUE,FALSE
+"11",2019-12-22,"South Carolina",FALSE,FALSE
+"12",2019-12-29,"Navy",TRUE,FALSE
+"13",2020-01-04,"Virginia Tech",TRUE,FALSE
+"14",2020-01-07,"Boston College",FALSE,TRUE
+"15",2020-01-11,"Syracuse",FALSE,FALSE
+"16",2020-01-15,"Florida State",FALSE,TRUE
+"17",2020-01-18,"Georgia Tech",TRUE,TRUE
+"18",2020-01-20,"NC State",FALSE,FALSE
+"19",2020-01-26,"Wake Forest",TRUE,TRUE
+"20",2020-01-28,"Florida State",TRUE,FALSE
+"21",2020-02-05,"Clemson",TRUE,FALSE
+"22",2020-02-08,"Louisville",FALSE,TRUE
+"23",2020-02-11,"Notre Dame",TRUE,FALSE
+"24",2020-02-15,"UNC",TRUE,TRUE
+"25",2020-02-19,"Boston College",TRUE,FALSE
+"26",2020-02-22,"Pitt",TRUE,TRUE
+"27",2020-02-26,"Virginia Tech",TRUE,TRUE
+"28",2020-02-29,"Duke",TRUE,FALSE
+"29",2020-03-04,"Miami (FL)",TRUE,TRUE
+"30",2020-03-07,"Louisville",TRUE,FALSE
