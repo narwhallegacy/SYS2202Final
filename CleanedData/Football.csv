@@ -1,133 +1,133 @@
 "","Date","Opponent","Won","Away"
-"1",NA,"BYU*",FALSE,FALSE
-"2",NA,"Richmond*",TRUE,FALSE
-"3",NA,"No. 11 Clemson",FALSE,FALSE
-"4",NA,"Maryland",TRUE,FALSE
-"5",NA,"North Carolina",TRUE,FALSE
-"6",NA,"Richmond*",TRUE,FALSE
-"7",NA,"Duke",TRUE,FALSE
-"8",NA,"No. 21 Florida State",FALSE,FALSE
-"9",NA,"Wake Forest",FALSE,FALSE
-"10",NA,"No. 20 Georgia Tech",TRUE,FALSE
-"11",NA,"Penn State*",TRUE,FALSE
-"12",NA,"Colorado State*",FALSE,FALSE
-"13",NA,"No. 22 South Carolina*",TRUE,FALSE
-"14",NA,"Akron*",TRUE,FALSE
-"15",NA,"Clemson",TRUE,FALSE
-"16",NA,"North Carolina",TRUE,FALSE
-"17",NA,"No. 22 NC State",TRUE,FALSE
-"18",NA,"No. 18 Maryland",TRUE,FALSE
-"19",NA,"Duke",TRUE,FALSE
-"20",NA,"Wake Forest",TRUE,FALSE
-"21",NA,"No. 8 Florida State",FALSE,FALSE
-"22",NA,"Troy State*",TRUE,FALSE
-"23",NA,"Georgia Tech",TRUE,FALSE
-"24",NA,"North Carolina",TRUE,FALSE
-"25",NA,"Akron*",TRUE,FALSE
-"26",NA,"Syracuse*",TRUE,FALSE
-"27",NA,"Clemson",TRUE,FALSE
-"28",NA,"Maryland",TRUE,FALSE
-"29",NA,"No. 18 Miami",FALSE,FALSE
-"30",NA,"Western Michigan*",TRUE,FALSE
-"31",NA,"Duke",TRUE,FALSE
-"32",NA,"No. 5 Florida State",TRUE,FALSE
-"33",NA,"Temple*",TRUE,FALSE
-"34",NA,"No. 24 Georgia Tech",TRUE,FALSE
-"35",NA,"Wyoming*",TRUE,FALSE
-"36",NA,"Western Michigan*",FALSE,FALSE
-"37",NA,"Maryland",FALSE,FALSE
-"38",NA,"North Carolina",TRUE,FALSE
-"39",NA,"NC State",TRUE,FALSE
-"40",NA,"Miami",TRUE,FALSE
-"41",NA,"Duke",TRUE,FALSE
-"42",NA,"Georgia Tech",TRUE,FALSE
-"43",NA,"Pittsburgh*",TRUE,FALSE
-"44",NA,"Connecticut*",TRUE,FALSE
-"45",NA,"No. 21 Wake Forest",TRUE,FALSE
-"46",NA,"No. 2 USC*",FALSE,FALSE
-"47",NA,"Richmond*",TRUE,FALSE
-"48",NA,"Maryland",TRUE,FALSE
-"49",NA,"East Carolina*",TRUE,FALSE
-"50",NA,"No. 18 North Carolina",TRUE,FALSE
-"51",NA,"Miami",FALSE,FALSE
-"52",NA,"Clemson",FALSE,FALSE
-"53",NA,"No. 14 (FCS) William & Mary*",FALSE,FALSE
-"54",NA,"No. 16 TCU*",FALSE,FALSE
-"55",NA,"Indiana*",TRUE,FALSE
-"56",NA,"No. 13 Georgia Tech",FALSE,FALSE
-"57",NA,"Duke",FALSE,FALSE
-"58",NA,"Boston College",FALSE,FALSE
-"59",NA,"Richmond*",TRUE,FALSE
-"60",NA,"VMI*",TRUE,FALSE
-"61",NA,"North Carolina",FALSE,FALSE
-"62",NA,"Eastern Michigan*",TRUE,FALSE
-"63",NA,"No. 22 Miami (FL)",TRUE,FALSE
-"64",NA,"Maryland",FALSE,FALSE
-"65",NA,"No. 3 (FCS) William & Mary*",TRUE,FALSE
-"66",NA,"Southern Miss*",FALSE,FALSE
-"67",NA,"Idaho*",TRUE,FALSE
-"68",NA,"No. 12 Georgia Tech",TRUE,FALSE
-"69",NA,"NC State",FALSE,FALSE
-"70",NA,"Duke",TRUE,FALSE
-"71",NA,"Richmond*",TRUE,FALSE
-"72",NA,"Penn State*",TRUE,FALSE
-"73",NA,"Louisiana Tech*",FALSE,FALSE
-"74",NA,"Maryland",FALSE,FALSE
-"75",NA,"Wake Forest",FALSE,FALSE
-"76",NA,"Miami",TRUE,FALSE
-"77",NA,"BYU*",TRUE,FALSE
-"78",NA,"No. 2 Oregon*",FALSE,FALSE
-"79",NA,"VMI*",TRUE,FALSE
-"80",NA,"Ball State*",FALSE,FALSE
-"81",NA,"Duke",FALSE,FALSE
-"82",NA,"Georgia Tech",FALSE,FALSE
-"83",NA,"No. 9 Clemson",FALSE,FALSE
-"84",NA,"No. 7 UCLA*",FALSE,FALSE
-"85",NA,"No. 17 (FCS) Richmond*",TRUE,FALSE
-"86",NA,"No. 21 Louisville",TRUE,FALSE
-"87",NA,"Kent State*",TRUE,FALSE
-"88",NA,"Pittsburgh",TRUE,FALSE
-"89",NA,"North Carolina",FALSE,FALSE
-"90",NA,"Miami (FL)",TRUE,FALSE
-"91",NA,"No. 9 Notre Dame*",FALSE,FALSE
-"92",NA,"William & Mary*",TRUE,FALSE
-"93",NA,"Boise State*",FALSE,FALSE
-"94",NA,"Syracuse",TRUE,FALSE
-"95",NA,"Georgia Tech",TRUE,FALSE
-"96",NA,"Duke",TRUE,FALSE
-"97",NA,"No. 4 (FCS) Richmond*",FALSE,FALSE
-"98",NA,"Central Michigan*",TRUE,FALSE
-"99",NA,"Pittsburgh",FALSE,FALSE
-"100",NA,"No. 22 North Carolina",FALSE,FALSE
-"101",NA,"No. 5 Louisville",FALSE,FALSE
-"102",NA,"Miami (FL)",FALSE,FALSE
-"103",NA,"William & Mary*",TRUE,FALSE
-"104",NA,"Indiana*",FALSE,FALSE
-"105",NA,"UConn*",TRUE,FALSE
-"106",NA,"Duke",TRUE,FALSE
-"107",NA,"Boston College",FALSE,FALSE
-"108",NA,"Georgia Tech",TRUE,FALSE
-"109",NA,"Richmond*",TRUE,FALSE
-"110",NA,"Louisville",TRUE,FALSE
-"111",NA,"No. 16 Miami (FL)",TRUE,FALSE
-"112",NA,"North Carolina",TRUE,FALSE
-"113",NA,"Pittsburgh",FALSE,FALSE
-"114",NA,"Liberty*",TRUE,FALSE
-"115",NA,"BYU",FALSE,TRUE
-"116",NA,"Clemson",TRUE,TRUE
-"117",NA,"Clemson",FALSE,TRUE
-"118",NA,"Georgia Tech",FALSE,TRUE
-"119",NA,"Georgia Tech",FALSE,TRUE
-"120",NA,"Georgia Tech",FALSE,TRUE
-"121",NA,"Georgia Tech",TRUE,TRUE
-"122",NA,"Georgia Tech",FALSE,TRUE
-"123",NA,"Georgia Tech",FALSE,TRUE
-"124",NA,"Georgia Tech",FALSE,TRUE
-"125",NA,"Georgia Tech",FALSE,TRUE
-"126",NA,"Georgia Tech",FALSE,TRUE
-"127",NA,"NC State",FALSE,TRUE
-"128",NA,"NC State",FALSE,TRUE
-"129",NA,"NC State",TRUE,TRUE
-"130",NA,"NC State",FALSE,TRUE
-"131",NA,"Boston College",FALSE,TRUE
-"132",NA,"Boston College",FALSE,TRUE
+"1",2000-09-02,"BYU*",FALSE,FALSE
+"2",2000-09-09,"Richmond*",TRUE,FALSE
+"3",2000-09-23,"No. 11 Clemson",FALSE,FALSE
+"4",2000-10-07,"Maryland",TRUE,FALSE
+"5",2000-10-28,"North Carolina",TRUE,FALSE
+"6",2001-09-01,"Richmond*",TRUE,FALSE
+"7",2001-09-29,"Duke",TRUE,FALSE
+"8",2001-10-20,"No. 21 Florida State",FALSE,FALSE
+"9",2001-11-03,"Wake Forest",FALSE,FALSE
+"10",2001-11-10,"No. 20 Georgia Tech",TRUE,FALSE
+"11",2001-12-01,"Penn State*",TRUE,FALSE
+"12",2002-08-22,"Colorado State*",FALSE,FALSE
+"13",2002-09-07,"No. 22 South Carolina*",TRUE,FALSE
+"14",2002-09-21,"Akron*",TRUE,FALSE
+"15",2002-10-12,"Clemson",TRUE,FALSE
+"16",2002-10-19,"North Carolina",TRUE,FALSE
+"17",2002-11-16,"No. 22 NC State",TRUE,FALSE
+"18",2002-11-23,"No. 18 Maryland",TRUE,FALSE
+"19",2003-08-30,"Duke",TRUE,FALSE
+"20",2003-09-27,"Wake Forest",TRUE,FALSE
+"21",2003-10-18,"No. 8 Florida State",FALSE,FALSE
+"22",2003-10-25,"Troy State*",TRUE,FALSE
+"23",2003-11-22,"Georgia Tech",TRUE,FALSE
+"24",2004-09-11,"North Carolina",TRUE,FALSE
+"25",2004-09-18,"Akron*",TRUE,FALSE
+"26",2004-09-25,"Syracuse*",TRUE,FALSE
+"27",2004-10-07,"Clemson",TRUE,FALSE
+"28",2004-11-06,"Maryland",TRUE,FALSE
+"29",2004-11-13,"No. 18 Miami",FALSE,FALSE
+"30",2005-09-03,"Western Michigan*",TRUE,FALSE
+"31",2005-09-24,"Duke",TRUE,FALSE
+"32",2005-10-15,"No. 5 Florida State",TRUE,FALSE
+"33",2005-11-05,"Temple*",TRUE,FALSE
+"34",2005-11-12,"No. 24 Georgia Tech",TRUE,FALSE
+"35",2006-09-09,"Wyoming*",TRUE,FALSE
+"36",2006-09-16,"Western Michigan*",FALSE,FALSE
+"37",2006-10-14,"Maryland",FALSE,FALSE
+"38",2006-10-19,"North Carolina",TRUE,FALSE
+"39",2006-10-28,"NC State",TRUE,FALSE
+"40",2006-11-18,"Miami",TRUE,FALSE
+"41",2007-09-08,"Duke",TRUE,FALSE
+"42",2007-09-22,"Georgia Tech",TRUE,FALSE
+"43",2007-09-29,"Pittsburgh*",TRUE,FALSE
+"44",2007-10-13,"Connecticut*",TRUE,FALSE
+"45",2007-11-03,"No. 21 Wake Forest",TRUE,FALSE
+"46",2008-08-30,"No. 2 USC*",FALSE,FALSE
+"47",2008-09-06,"Richmond*",TRUE,FALSE
+"48",2008-10-04,"Maryland",TRUE,FALSE
+"49",2008-10-11,"East Carolina*",TRUE,FALSE
+"50",2008-10-18,"No. 18 North Carolina",TRUE,FALSE
+"51",2008-11-01,"Miami",FALSE,FALSE
+"52",2008-11-22,"Clemson",FALSE,FALSE
+"53",2009-09-05,"No. 14 (FCS) William & Mary*",FALSE,FALSE
+"54",2009-09-12,"No. 16 TCU*",FALSE,FALSE
+"55",2009-10-10,"Indiana*",TRUE,FALSE
+"56",2009-10-24,"No. 13 Georgia Tech",FALSE,FALSE
+"57",2009-10-31,"Duke",FALSE,FALSE
+"58",2009-11-14,"Boston College",FALSE,FALSE
+"59",2010-09-04,"Richmond*",TRUE,FALSE
+"60",2010-09-25,"VMI*",TRUE,FALSE
+"61",2010-10-16,"North Carolina",FALSE,FALSE
+"62",2010-10-23,"Eastern Michigan*",TRUE,FALSE
+"63",2010-10-30,"No. 22 Miami (FL)",TRUE,FALSE
+"64",2010-11-13,"Maryland",FALSE,FALSE
+"65",2011-09-03,"No. 3 (FCS) William & Mary*",TRUE,FALSE
+"66",2011-09-24,"Southern Miss*",FALSE,FALSE
+"67",2011-10-01,"Idaho*",TRUE,FALSE
+"68",2011-10-15,"No. 12 Georgia Tech",TRUE,FALSE
+"69",2011-10-22,"NC State",FALSE,FALSE
+"70",2011-11-12,"Duke",TRUE,FALSE
+"71",2012-09-01,"Richmond*",TRUE,FALSE
+"72",2012-09-08,"Penn State*",TRUE,FALSE
+"73",2012-09-29,"Louisiana Tech*",FALSE,FALSE
+"74",2012-10-13,"Maryland",FALSE,FALSE
+"75",2012-10-20,"Wake Forest",FALSE,FALSE
+"76",2012-11-10,"Miami",TRUE,FALSE
+"77",2013-08-31,"BYU*",TRUE,FALSE
+"78",2013-09-07,"No. 2 Oregon*",FALSE,FALSE
+"79",2013-09-21,"VMI*",TRUE,FALSE
+"80",2013-10-05,"Ball State*",FALSE,FALSE
+"81",2013-10-19,"Duke",FALSE,FALSE
+"82",2013-10-26,"Georgia Tech",FALSE,FALSE
+"83",2013-11-02,"No. 9 Clemson",FALSE,FALSE
+"84",2014-08-30,"No. 7 UCLA*",FALSE,FALSE
+"85",2014-09-06,"No. 17 (FCS) Richmond*",TRUE,FALSE
+"86",2014-09-13,"No. 21 Louisville",TRUE,FALSE
+"87",2014-09-27,"Kent State*",TRUE,FALSE
+"88",2014-10-04,"Pittsburgh",TRUE,FALSE
+"89",2014-10-25,"North Carolina",FALSE,FALSE
+"90",2014-11-22,"Miami (FL)",TRUE,FALSE
+"91",2015-09-12,"No. 9 Notre Dame*",FALSE,FALSE
+"92",2015-09-19,"William & Mary*",TRUE,FALSE
+"93",2015-09-25,"Boise State*",FALSE,FALSE
+"94",2015-10-17,"Syracuse",TRUE,FALSE
+"95",2015-10-31,"Georgia Tech",TRUE,FALSE
+"96",2015-11-21,"Duke",TRUE,FALSE
+"97",2016-09-03,"No. 4 (FCS) Richmond*",FALSE,FALSE
+"98",2016-09-24,"Central Michigan*",TRUE,FALSE
+"99",2016-10-15,"Pittsburgh",FALSE,FALSE
+"100",2016-10-22,"No. 22 North Carolina",FALSE,FALSE
+"101",2016-10-29,"No. 5 Louisville",FALSE,FALSE
+"102",2016-11-12,"Miami (FL)",FALSE,FALSE
+"103",2017-09-02,"William & Mary*",TRUE,FALSE
+"104",2017-09-09,"Indiana*",FALSE,FALSE
+"105",2017-09-16,"UConn*",TRUE,FALSE
+"106",2017-10-07,"Duke",TRUE,FALSE
+"107",2017-10-21,"Boston College",FALSE,FALSE
+"108",2017-11-04,"Georgia Tech",TRUE,FALSE
+"109",2018-09-01,"Richmond*",TRUE,FALSE
+"110",2018-09-22,"Louisville",TRUE,FALSE
+"111",2018-10-13,"No. 16 Miami (FL)",TRUE,FALSE
+"112",2018-10-27,"North Carolina",TRUE,FALSE
+"113",2018-11-02,"Pittsburgh",FALSE,FALSE
+"114",2018-11-10,"Liberty*",TRUE,FALSE
+"115",2014-09-20,"BYU",FALSE,TRUE
+"116",2001-09-22,"Clemson",TRUE,TRUE
+"117",2009-11-21,"Clemson",FALSE,TRUE
+"118",2000-11-09,"Georgia Tech",FALSE,TRUE
+"119",2002-10-26,"Georgia Tech",FALSE,TRUE
+"120",2006-09-21,"Georgia Tech",FALSE,TRUE
+"121",2008-10-25,"Georgia Tech",TRUE,TRUE
+"122",2010-10-09,"Georgia Tech",FALSE,TRUE
+"123",2012-09-15,"Georgia Tech",FALSE,TRUE
+"124",2014-11-01,"Georgia Tech",FALSE,TRUE
+"125",2016-11-19,"Georgia Tech",FALSE,TRUE
+"126",2018-11-17,"Georgia Tech",FALSE,TRUE
+"127",2001-10-27,"NC State",FALSE,TRUE
+"128",2003-11-01,"NC State",FALSE,TRUE
+"129",2012-11-03,"NC State",TRUE,TRUE
+"130",2018-09-29,"NC State",FALSE,TRUE
+"131",2005-10-08,"Boston College",FALSE,TRUE
+"132",2010-11-20,"Boston College",FALSE,TRUE
