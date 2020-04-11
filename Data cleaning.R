@@ -70,3 +70,20 @@ charDate = as.character(footballReduced$Date)
 footballReduced$Date = as.POSIXct(charDate, format= "%m/%d/%Y")
 
 write.csv(footballReduced,"C:/Users/Lee/Documents/GitHub/SYS2202Final/CleanedData/Football.csv")
+
+
+
+
+#-------combine sports data-------------------------
+
+IsBasketball = TRUE
+
+BasketballReduced = data.frame(BasketballReduced,IsBasketball)
+
+IsBasketball = FALSE
+
+footballReduced = data.frame(footballReduced,IsBasketball)
+
+uvaSports = rbind(BasketballReduced, footballReduced)
+
+write.csv(uvaSports,"C:/Users/Lee/Documents/GitHub/SYS2202Final/CleanedData/uvaSports.csv")
