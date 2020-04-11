@@ -28,14 +28,73 @@ uvaBasketball = read.csv("UVA2019_2020BasketballSeason.csv", header=TRUE)
 Away = (uvaBasketball$X == '@')
 Won = ((uvaBasketball$W.L == 'W') | (uvaBasketball $W.L == 'W (1 OT)'))
 
-BasketballReduced = data.frame(uvaBasketball$Date, uvaBasketball$Opp, Won, Away)
-names(BasketballReduced) = c("Date", "Opponent", "Won", "Away")
+BasketballReduced1920 = data.frame(uvaBasketball$Date, uvaBasketball$Opp, Won, Away)
+names(BasketballReduced1920) = c("Date", "Opponent", "Won", "Away")
 
-charDate = as.character(BasketballReduced$Date)
-BasketballReduced$Date = as.POSIXct(charDate, format= "%m/%d/%Y")
+charDate = as.character(BasketballReduced1920$Date)
+BasketballReduced1920$Date = as.POSIXct(charDate, format= "%m/%d/%Y")
 
 
-write.csv(BasketballReduced,"C:/Users/Lee/Documents/GitHub/SYS2202Final/CleanedData/Basketball.csv")
+#write.csv(BasketballReduced,"C:/Users/Lee/Documents/GitHub/SYS2202Final/CleanedData/Basketball1920.csv")
+
+
+#2018/19 Season
+uvaBasketball = read.csv("UVA2018_2019BasketballSeason.csv", header=TRUE)
+
+Away = (uvaBasketball$X == '@')
+Won = ((uvaBasketball$W.L == 'W') | (uvaBasketball $W.L == 'W (1 OT)'))
+
+BasketballReduced1819 = data.frame(uvaBasketball$Date, uvaBasketball$Opp, Won, Away)
+names(BasketballReduced1819) = c("Date", "Opponent", "Won", "Away")
+
+charDate = as.character(BasketballReduced1819$Date)
+BasketballReduced1819$Date = as.POSIXct(charDate, format= "%m/%d/%Y")
+
+#2017/18 Season
+uvaBasketball = read.csv("UVA2017_2018BasketballSeason.csv", header=TRUE)
+
+Away = (uvaBasketball$X == '@')
+Won = ((uvaBasketball$W.L == 'W') | (uvaBasketball $W.L == 'W (1 OT)'))
+
+BasketballReduced1718 = data.frame(uvaBasketball$Date, uvaBasketball$Opp, Won, Away)
+names(BasketballReduced1718) = c("Date", "Opponent", "Won", "Away")
+
+charDate = as.character(BasketballReduced1718$Date)
+BasketballReduced1718$Date = as.POSIXct(charDate, format= "%m/%d/%Y")
+
+
+#2016/17 Season
+uvaBasketball = read.csv("UVA2016_2017BasketballSeason.csv", header=TRUE)
+
+Away = (uvaBasketball$X == '@')
+Won = ((uvaBasketball$W.L == 'W') | (uvaBasketball $W.L == 'W (1 OT)'))
+
+BasketballReduced1617 = data.frame(uvaBasketball$Date, uvaBasketball$Opp, Won, Away)
+names(BasketballReduced1617) = c("Date", "Opponent", "Won", "Away")
+
+charDate = as.character(BasketballReduced1617$Date)
+BasketballReduced1617$Date = as.POSIXct(charDate, format= "%m/%d/%Y")
+
+#2015/16 Season
+uvaBasketball = read.csv("UVA2015_2016BasketballSeason.csv", header=TRUE)
+
+Away = (uvaBasketball$X == '@')
+Won = ((uvaBasketball$W.L == 'W') | (uvaBasketball $W.L == 'W (1 OT)'))
+
+BasketballReduced1516 = data.frame(uvaBasketball$Date, uvaBasketball$Opp, Won, Away)
+names(BasketballReduced1516) = c("Date", "Opponent", "Won", "Away")
+
+charDate = as.character(BasketballReduced1516$Date)
+BasketballReduced1516$Date = as.POSIXct(charDate, format= "%m/%d/%Y")
+
+
+
+#Combining Basketball into one large .csv file
+BasketballReduced = rbind(BasketballReduced1516,BasketballReduced1617,BasketballReduced1718,BasketballReduced1819,BasketballReduced1920)
+
+
+write.csv(BasketballReduced,"C:/Users/Lee/Documents/GitHub/SYS2202Final/CleanedData/Basketball1920.csv")
+
 
 
 
