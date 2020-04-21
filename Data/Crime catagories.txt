@@ -1,0 +1,82 @@
+Accident
+	w/out injury
+	property damage
+	w/ Injuries
+	Hit and Run?
+
+Animal-related
+	bite
+	complaint
+Assault
+	aggrivated
+	intimidation
+	smiple
+
+Assistance
+	agency
+	citizen
+	Found/recovered property?
+	lost/found property
+	missing person - adult
+	missing person - juvenile
+
+Theft
+	burgalary
+	Larceny - other
+	Larceny - from motor vehicle
+	Larceny - of veh parts
+	Larceny - pocket picking
+	Larceny - shoplifting
+	Larceny - theft from building
+	motor vehicle theft
+
+Disorderly conduct
+	^
+	disturbance
+	domestic disturbance
+	shots fired/illegal hunting
+	suspicious activity
+	suspicious person
+	tresspass
+	vandalism
+
+Substance Abuse
+	DUI
+	Drug investigation
+	Drug/narcotic violation
+	drunkeness DIP
+	liquor law violation
+	narcotics
+
+Fraud
+	embezelment
+	fraud - credit card
+	forgery/counterfeiting
+	fraud - impersonation
+	fraud - false pretence
+	fraud - wire fraud
+
+Threats/obseceneties
+	phone call - threat/obseceneties
+	harassment
+	extortion/blackmail
+
+Sex Offense
+	Forcible rape
+	Forcible sodomy
+	forcible fondling
+	
+
+Unkown/misc
+	comm relations initiative
+	death investigation
+	misc - criminal call
+	misc - non-criminal call
+	solicitation illegal w/o permit
+	runaway
+	towed vehicle
+	traffic stops
+	unautorized use of motor veh
+	weapons violations
+	warrant service
+	
