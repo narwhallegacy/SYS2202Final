@@ -33,7 +33,8 @@ ui = fluidPage(
                         label = "Home or Away? : ",
                         choices = c(
                           "Home" = "",
-                          "Away" = ""),
+                          "Away" = "",
+                          "(NO FILTER)" = ""),
                         selected = "Home"),
                       # Selection for UVA win or UVA lose
                       radioButtons(
@@ -41,7 +42,8 @@ ui = fluidPage(
                         label = "UVA win or lose? : ",
                         choices = c(
                           "Wa-hoo-wa!" = "",
-                          "Tech Sucks :( " = ""),
+                          "Tech Sucks :( " = "",
+                          "(NO FILTER)" = ""),
                         selected = "Wa-hoo-wa!"),
       )),
       # Selection for UVA-game opponent school
