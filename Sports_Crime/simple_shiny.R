@@ -1,49 +1,60 @@
 # install.packages('shiny')
 library(shiny)
-
-# Rely on the 'Sports_Crime' dataset in the datasets
-# package (which generally comes preloaded).
+library(leaflet)
 library(datasets)
 Sports_Crime = read.csv("Sports_Crime.csv", header = TRUE)
 
 # Define a server for the Shiny app
 server = function(input, output) {
-  
   # Fill in the spot we created for a plot
-  output$mapPlot <- renderPlot({
-    
-    # Render a barplot
+  output$mapPlot <- renderLeaflet({
+    # Render the map plot
     leaflet(data = Sports_Crime) %>% addTiles() %>%
-      addMarkers(~longitude,
-                 ~latitude,
-                 
+      addMarkers(~Longitude,
+                 ~Latitude,
                  # Creates a map plot of the data points
-                 label = as.string("Date of Incident: " + event_date + "\nCrime Type: " + crime_type))
+                 #label = ("Date of Incident: " + Date + "\nCrime Type: " + Offense))
+                label = ("Crime Type: " + Sports_Crime$crime_type))
   })
 }
 
 # Use a fluid Bootstrap layout
-ui = fluidPage(    
-  
+ui = fluidPage(
   # Give the page a title
-  titlePanel("TEST"),
-  
+  titlePanel("Map of Reported Crimes in Charlottesville on Game Days"),
   # Generate a row with a sidebar
-  sidebarLayout(      
-    
-    # Define the sidebar with one input
-    sidebarPanel(
-      selectInput("oppoent", "Opponent:", 
-                  choices = Sports_Crime$Opponent),
-      hr(),
-      helpText("Data from CVille City Data")
+  sidebarLayout(
+    sidebarPanel( 
+      titlePanel("Crime Data"),
+      fluidRow(column(9, 
+                      # Home / Away Games ----
+                      checkboxGroupInput(
+                        inputId = "HomeFinder",
+                        label = "Home or Away? : ",
+                        choices = c(
+                          "Home" = "",
+                          "Away" = ""),
+                        selected = "Home"),
+                      
+                      # UVA Win / Lose Result ----
+                      checkboxGroupInput(
+                        inputId = "WinFinder",
+                        label = "UVA win or lose? : ",
+                        choices = c(
+                          "Wa-hoo-wa!" = "",
+                          "Tech Sucks :( " = ""),
+                        selected = "Wa-hoo-wa!"),
+      )),
+      # Select opponent school
+      selectInput(inputId = "OpponentFinder",
+                  label = "Select Opponent School",
+                  choices = Sports_Crime$Opponent,
+                  width = "220px"
+      ),
     ),
-    
-    # Create a spot for the barplot
     mainPanel(
-      plotOutput("phonePlot")  
+      leafletOutput("mapPlot")
     )
-    
   )
 )
 
