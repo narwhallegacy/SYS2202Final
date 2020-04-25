@@ -4,20 +4,6 @@ library(leaflet)
 library(datasets)
 Sports_Crime = read.csv("Sports_Crime.csv", header = TRUE)
 
-# Define a server for the Shiny app
-server = function(input, output) {
-  # Fill in the spot we created for a plot
-  output$mapPlot <- renderLeaflet({
-    # Render the map plot
-    leaflet(data = Sports_Crime) %>% addTiles() %>%
-      addMarkers(~Longitude,
-                 ~Latitude,
-                 # Creates a map plot of the data points
-                 #label = ("Date of Incident: " + Date + "\nCrime Type: " + Offense))
-                label = ("Crime Type: " + Sports_Crime$crime_type))
-  })
-}
-
 # Use a fluid Bootstrap layout
 ui = fluidPage(
   # Give the page a title
@@ -32,18 +18,16 @@ ui = fluidPage(
                         inputId = "HomeFinder",
                         label = "Home or Away? : ",
                         choices = c(
-                          "Home" = "",
-                          "Away" = "",
-                          "(NO FILTER)" = ""),
+                          "Home" = TRUE,
+                          "Away" = FALSE),
                         selected = "Home"),
                       # Selection for UVA win or UVA lose
                       radioButtons(
                         inputId = "WinFinder",
                         label = "UVA win or lose? : ",
                         choices = c(
-                          "Wa-hoo-wa!" = "",
-                          "Tech Sucks :( " = "",
-                          "(NO FILTER)" = ""),
+                          "Wa-hoo-wa!" = TRUE,
+                          "Tech Sucks :( " = FALSE),
                         selected = "Wa-hoo-wa!"),
       )),
       # Selection for UVA-game opponent school
@@ -58,5 +42,40 @@ ui = fluidPage(
     )
   )
 )
+
+
+
+
+# Define a server for the Shiny app
+server = function(input, output) {
+  #mapFinder <- reactive({Sports_Crime})
+  
+  mapFinder <- reactive({
+    req(input$HomeFinder)
+    # req(input$WinFinder)
+    # req(input$OpponentFinder)
+    filter(Sports_Crime, Home %in% HomeFinder)
+      # %>% filter(win %in% input$WinFinder)
+      # %>% filter(Opponent %in% input$OpponentFinder)
+  })
+  
+  # Fill in the spot we created for a plot
+  output$mapPlot <- renderLeaflet({
+    input$HomeFinder
+      
+    isolate({
+    
+    # Render the map plot
+    leaflet(data = mapFinder) %>% addTiles() %>%
+      addMarkers(~Longitude,
+                 ~Latitude,
+                 # Creates a map plot of the data points
+                 #label = ("Date of Incident: " + Date + "\nCrime Type: " + Offense))
+                label = ("Crime Type: " + Sports_Crime$crime_type))
+    })
+  })
+}
+
+
 
 shinyApp(ui = ui, server = server)
