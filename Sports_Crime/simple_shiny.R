@@ -26,18 +26,17 @@ ui = fluidPage(
   sidebarLayout(
     sidebarPanel( 
       titlePanel("Crime Data"),
-      fluidRow(column(9, 
-                      # Home / Away Games ----
-                      checkboxGroupInput(
+      fluidRow(column(9,
+                      # Selection for home game or away game
+                      radioButtons(
                         inputId = "HomeFinder",
                         label = "Home or Away? : ",
                         choices = c(
                           "Home" = "",
                           "Away" = ""),
                         selected = "Home"),
-                      
-                      # UVA Win / Lose Result ----
-                      checkboxGroupInput(
+                      # Selection for UVA win or UVA lose
+                      radioButtons(
                         inputId = "WinFinder",
                         label = "UVA win or lose? : ",
                         choices = c(
@@ -45,7 +44,7 @@ ui = fluidPage(
                           "Tech Sucks :( " = ""),
                         selected = "Wa-hoo-wa!"),
       )),
-      # Select opponent school
+      # Selection for UVA-game opponent school
       selectInput(inputId = "OpponentFinder",
                   label = "Select Opponent School",
                   choices = Sports_Crime$Opponent,
