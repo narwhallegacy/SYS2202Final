@@ -61,12 +61,16 @@ ui = fluidPage(
                    # Tab 1: Map of Reported Incidents on Game Day
                    titlePanel("Map of Reported Crimes in Charlottesville on Game Days"),
                    sidebarLayout( sidebarPanel( 
-                     # Selection for incident-report date range
-                     dateRangeInput(inputId="dateFinder", label = 'Month-Year',
-                                    start = "2015-09", end = "2020-03",
-                                    min = "2015-09", max = "2020-03", format = "yyyy-mm",
-                                    startview = "year",weekstart = 0, language = "en",
-                                    separator = ' to ', width = '400px'),
+                     fluidRow(column(5, 
+                                     # Selection for month
+                                     selectInput(inputId = "monthLocator", label = "Select Month", 
+                                                 choices = c(sort(as.character(FINAL_DF$MONTH))), width = "220px")
+                     ),
+                     column(5, offset = 0, 
+                            # Selection for month
+                            selectInput(inputId = "yearLocator", label = "Select Year", 
+                                        choices = c(sort(as.character(FINAL_DF$YEAR))), width = "220px")
+                     )),
                    ),
                    mainPanel( leafletOutput("barPlot") ) ) 
           )        
@@ -104,11 +108,36 @@ server = function(input, output) ({
       }) 
     })
   output$barPlot <- renderPlot({
+    Sports_Crime = read.csv("crime_data_categorized.csv", header = TRUE)
+    Total_Crime = read.csv("Crime_Data.csv", header = TRUE)
     
     
+    # Cleaning and grouping the data ----
+    Total_Crime <- separate(Total_Crime, DateReported, c("YEAR","MONTH","DAY"), sep="-", remove = FALSE)
+    Total_Crime <- separate(Total_Crime, DateReported, c("DAY","etc."), sep="T", remove = FALSE)
+    TOTAL_COUNTS <- Total_Crime %>% group_by(DAY) %>% tally()
+    TOTAL_COUNTS <- separate(TOTAL_COUNTS, DAY, c("YEAR", "MONTH", "NEW_DAY"), sep="-", remove = FALSE)
+    names(TOTAL_COUNTS)[names(TOTAL_COUNTS) == "DAY"] <- "stringDate"
+    names(TOTAL_COUNTS)[names(TOTAL_COUNTS) == "NEW_DAY"] <- "DAY"
+    SPORTS_COUNTS <- Sports_Crime %>% group_by(event_date) %>% tally()
+    SPORTS_COUNTS <- separate(SPORTS_COUNTS, event_date, c("YEAR", "MONTH", "DAY"), sep="-", remove = FALSE)
+    TOTAL_COUNTS$Date <- with(TOTAL_COUNTS, paste0(YEAR, MONTH, DAY))
+    SPORTS_COUNTS$Date <- with(SPORTS_COUNTS, paste0(YEAR, MONTH, DAY))
+    FINAL_DF <- TOTAL_COUNTS
+    FINAL_DF$Game.Day <- ifelse(FINAL_DF$Date %in% SPORTS_COUNTS$Date, TRUE, FALSE)
+    
+    # Plotting ----
+    TestFilter = (as.Date(FINAL_DF$YEAR) == input$yearLocator) & (as.Date(FINAL_DF$MONTH) == input$monthLocator)
+    # TestFilter = (FINAL_DF$YEAR == '2020') & (FINAL_DF$MONTH == '02')
+    filteredDf = FINAL_DF[TestFilter,]
+    isolate ({ 
+      ggplot(data = filteredDf, 
+             aes(x=DAY, 
+                 y = n, 
+                 fill = Game.Day)) 
+      + geom_bar(stat="identity")
+        })
   })
-  
-  
   })
 # Final Function Call to Generate RShiny Page----
 shinyApp(ui = ui, server = server)

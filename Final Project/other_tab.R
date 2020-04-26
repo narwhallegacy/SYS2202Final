@@ -23,9 +23,15 @@ SPORTS_COUNTS <- separate(SPORTS_COUNTS, event_date, c("YEAR", "MONTH", "DAY"), 
 TOTAL_COUNTS$Date <- with(TOTAL_COUNTS, paste0(YEAR, MONTH, DAY))
 SPORTS_COUNTS$Date <- with(SPORTS_COUNTS, paste0(YEAR, MONTH, DAY))
 FINAL_DF <- TOTAL_COUNTS
-FINAL_DF$COLOR <- ifelse(FINAL_DF$Date %in% SPORTS_COUNTS$Date, TRUE, FALSE)
+FINAL_DF$Game.Day <- ifelse(FINAL_DF$Date %in% SPORTS_COUNTS$Date, TRUE, FALSE)
 
 # Plotting ----
+TestFilter = (FINAL_DF$YEAR == '2020') & (FINAL_DF$MONTH == '02')
+filteredDf = FINAL_DF[TestFilter,]
+ggplot(data = filteredDf, aes(x=DAY, y = n, fill = Game.Day)) + geom_bar(stat="identity")
+
+
+
 
 # server = function(input, output) {
 #   
