@@ -18,11 +18,10 @@ Sports_Crime = read.csv("crime_data_categorized.csv", header = TRUE)
 # User-Interface Development ----
 ui = fluidPage(
   navbarPage("Sports-Crime Data", theme = shinytheme("sandstone"),
-             tabPanel("Chralottesville Map of Crime", fluid = TRUE, icon = icon("globe-americas"),
+             tabPanel("Charlottesville Map of Crime", fluid = TRUE, icon = icon("globe-americas"),
               # Tab 1: Map of Reported Incidents on Game Day
               titlePanel("Map of Reported Crimes in Charlottesville on Game Days"),
               sidebarLayout( sidebarPanel( 
-                
                 fluidRow(column(6, 
                                 # Selection for home game or away game
                                 radioButtons( inputId = "HomeFinder", label = "Home or Away? : ",
@@ -58,53 +57,43 @@ ui = fluidPage(
                 mainPanel( leafletOutput("mapPlot") ) ) 
           ),
           # Tab 2: Comparison of Reported Crimes to Monthly Average 
-          tabPanel("Monthly Average Comparison", fluid = TRUE, icon = icon("calendar"))
+          tabPanel("Monthly Average Comparison", fluid = TRUE, icon = icon("calendar"), 
+                   
+                   
+                   
+                   )
     ))
 
-# Server ----
+# Server Session Development ----
 server = function(input, output) {
-  
-  
-  
-  
   output$mapPlot <- renderLeaflet({
-    
-    #filters data
+    # 'filters' data
     #Filters based on wins
     if (is.na(as.logical(input$WinFinder))) {
       winFilter = TRUE
     } else {
       winFilter = Sports_Crime$win == as.logical(input$WinFinder)
     }
-    
     #Filters based on home game/away game
     if (is.na(as.logical(input$HomeFinder))) {
       homeFilter = TRUE
     } else {
       homeFilter = Sports_Crime$home == as.logical(input$HomeFinder)
     }
-    
     #Filters based on Date Range
     dateFilter = (as.Date(Sports_Crime$event_date) >= input$dateFinder[1]) & (as.Date(Sports_Crime$event_date) <= input$dateFinder[2])
-    
     #Filters based on Opponent
     if (input$OpponentFinder == 'N/A') {
       oppFilter = TRUE
     } else {
       oppFilter = Sports_Crime$Opponent == input$OpponentFinder
     }
-    
     #Filters based on Crime Type
     crimeFilter = Sports_Crime$Crime.Category %in% input$CrimeFinder
-    
-    
     #Combines all above filters
     CombinedFilter = winFilter & homeFilter & oppFilter & crimeFilter & dateFilter
     filteredData = Sports_Crime[CombinedFilter,]
-    
-    
     isolate({
-      
       # Render the map plot
       leaflet(data = filteredData) %>% addTiles() %>%
         addMarkers(~Longitude,
@@ -113,11 +102,6 @@ server = function(input, output) {
                    #label = ("Date of Incident: " + Date + "\nCrime Type: " + Offense))
                    label = paste("Crime Type: ", filteredData$crime_type, ' | Date: ',filteredData$event_date,
                                  " | Sport: ",filteredData$sport, sep = ""))
-    }) })
-  
-  
-}
-
-
+    }) })}
 # ----
 shinyApp(ui = ui, server = server)
