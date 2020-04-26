@@ -58,36 +58,35 @@ ui = fluidPage(
           ),
           # Tab 2: Comparison of Reported Crimes to Monthly Average 
           tabPanel("Monthly Average Comparison", fluid = TRUE, icon = icon("calendar"), 
-                   
-                   
-                   
-                   )
+                   # Tab 1: Map of Reported Incidents on Game Day
+                   titlePanel("Map of Reported Crimes in Charlottesville on Game Days"),
+                   sidebarLayout( sidebarPanel( 
+                     # Selection for incident-report date range
+                     dateRangeInput(inputId="dateFinder", label = 'Month-Year',
+                                    start = "2015-09", end = "2020-03",
+                                    min = "2015-09", max = "2020-03", format = "yyyy-mm",
+                                    startview = "year",weekstart = 0, language = "en",
+                                    separator = ' to ', width = '400px'),
+                   ),
+                   mainPanel( leafletOutput("barPlot") ) ) 
+          )        
     ))
 
 # Server Session Development ----
-server = function(input, output) {
+server = function(input, output) ({
   output$mapPlot <- renderLeaflet({
     # 'filters' data
     #Filters based on wins
-    if (is.na(as.logical(input$WinFinder))) {
-      winFilter = TRUE
-    } else {
-      winFilter = Sports_Crime$win == as.logical(input$WinFinder)
-    }
+    if (is.na(as.logical(input$WinFinder))) { winFilter = TRUE } 
+    else { winFilter = Sports_Crime$win == as.logical(input$WinFinder) }
     #Filters based on home game/away game
-    if (is.na(as.logical(input$HomeFinder))) {
-      homeFilter = TRUE
-    } else {
-      homeFilter = Sports_Crime$home == as.logical(input$HomeFinder)
-    }
+    if (is.na(as.logical(input$HomeFinder))) { homeFilter = TRUE } 
+    else { homeFilter = Sports_Crime$home == as.logical(input$HomeFinder) }
     #Filters based on Date Range
     dateFilter = (as.Date(Sports_Crime$event_date) >= input$dateFinder[1]) & (as.Date(Sports_Crime$event_date) <= input$dateFinder[2])
     #Filters based on Opponent
-    if (input$OpponentFinder == 'N/A') {
-      oppFilter = TRUE
-    } else {
-      oppFilter = Sports_Crime$Opponent == input$OpponentFinder
-    }
+    if (input$OpponentFinder == 'N/A') { oppFilter = TRUE } 
+    else { oppFilter = Sports_Crime$Opponent == input$OpponentFinder }
     #Filters based on Crime Type
     crimeFilter = Sports_Crime$Crime.Category %in% input$CrimeFinder
     #Combines all above filters
@@ -102,6 +101,14 @@ server = function(input, output) {
                    #label = ("Date of Incident: " + Date + "\nCrime Type: " + Offense))
                    label = paste("Crime Type: ", filteredData$crime_type, ' | Date: ',filteredData$event_date,
                                  " | Sport: ",filteredData$sport, sep = ""))
-    }) })}
-# ----
+      }) 
+    })
+  output$barPlot <- renderPlot({
+    
+    
+  })
+  
+  
+  })
+# Final Function Call to Generate RShiny Page----
 shinyApp(ui = ui, server = server)
