@@ -1,0 +1,19 @@
+Final Project Folder Guide
+========
+Folders
+--------
+Misc. : contains miscellaneous files, both datasets and R-programs, used in developing the final program
+
+--------
+R Files
+--------
+CrimeCategorization :
+DataCleaning : 
+ShinyInputFunctions :
+VisualApp : 
+
+--------
+CSV / Excel Files
+--------
+Sports_Crime :
+crime_data_categorized : 
