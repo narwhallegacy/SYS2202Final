@@ -68,7 +68,7 @@ ui = fluidPage(
                                start = "2015-09-12", end = "2020-03-07",
                                min = "2015-09-12", max = "2020-03-07", format = "yyyy-mm-dd",
                                startview = "year",weekstart = 0, language = "en",
-                               separator = ' to ', width = '400px'),
+                               separator = ' to ', width = '400px')
                 ),
                 mainPanel( leafletOutput("mapPlot") ) ) 
           ),
@@ -86,7 +86,7 @@ ui = fluidPage(
                             # Selection for month
                             selectInput(inputId = "yearLocator", label = "Select Year", 
                                         choices = c(sort(as.character(FINAL_DF$YEAR))), width = "220px")
-                     )),
+                     ))
                    ),
                    mainPanel( plotOutput("barPlot") ) ) 
           )        
@@ -126,15 +126,12 @@ server = function(input, output) ({
   output$barPlot <- renderPlot({
     
     # Plotting ----
-    TestFilter = (as.Date(FINAL_DF$YEAR) == input$yearLocator) & (as.Date(FINAL_DF$MONTH) == input$monthLocator)
+    TestFilter = (FINAL_DF$YEAR == input$yearLocator) & (FINAL_DF$MONTH == input$monthLocator)
     # TestFilter = (FINAL_DF$YEAR == '2020') & (FINAL_DF$MONTH == '02')
     filteredDf = FINAL_DF[TestFilter,]
     isolate ({ 
       ggplot(data = filteredDf, 
-             aes(x=DAY, 
-                 y = n, 
-                 fill = Game.Day)) 
-      + geom_bar(stat="identity")
+             aes(x=DAY,  y = n, fill = Game.Day)) + geom_bar(stat="identity")
         })
   })
   })
