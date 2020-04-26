@@ -14,6 +14,22 @@ library(shinycssloaders)
 library(shinythemes)
 
 Sports_Crime = read.csv("crime_data_categorized.csv", header = TRUE)
+Sports_Crime = read.csv("crime_data_categorized.csv", header = TRUE)
+Total_Crime = read.csv("Crime_Data.csv", header = TRUE)
+
+# Cleaning and grouping the data ----
+Total_Crime <- separate(Total_Crime, DateReported, c("YEAR","MONTH","DAY"), sep="-", remove = FALSE)
+Total_Crime <- separate(Total_Crime, DateReported, c("DAY","etc."), sep="T", remove = FALSE)
+TOTAL_COUNTS <- Total_Crime %>% group_by(DAY) %>% tally()
+TOTAL_COUNTS <- separate(TOTAL_COUNTS, DAY, c("YEAR", "MONTH", "NEW_DAY"), sep="-", remove = FALSE)
+names(TOTAL_COUNTS)[names(TOTAL_COUNTS) == "DAY"] <- "stringDate"
+names(TOTAL_COUNTS)[names(TOTAL_COUNTS) == "NEW_DAY"] <- "DAY"
+SPORTS_COUNTS <- Sports_Crime %>% group_by(event_date) %>% tally()
+SPORTS_COUNTS <- separate(SPORTS_COUNTS, event_date, c("YEAR", "MONTH", "DAY"), sep="-", remove = FALSE)
+TOTAL_COUNTS$Date <- with(TOTAL_COUNTS, paste0(YEAR, MONTH, DAY))
+SPORTS_COUNTS$Date <- with(SPORTS_COUNTS, paste0(YEAR, MONTH, DAY))
+FINAL_DF <- TOTAL_COUNTS
+FINAL_DF$Game.Day <- ifelse(FINAL_DF$Date %in% SPORTS_COUNTS$Date, TRUE, FALSE)
 
 # User-Interface Development ----
 ui = fluidPage(
@@ -72,7 +88,7 @@ ui = fluidPage(
                                         choices = c(sort(as.character(FINAL_DF$YEAR))), width = "220px")
                      )),
                    ),
-                   mainPanel( leafletOutput("barPlot") ) ) 
+                   mainPanel( plotOutput("barPlot") ) ) 
           )        
     ))
 
@@ -108,23 +124,6 @@ server = function(input, output) ({
       }) 
     })
   output$barPlot <- renderPlot({
-    Sports_Crime = read.csv("crime_data_categorized.csv", header = TRUE)
-    Total_Crime = read.csv("Crime_Data.csv", header = TRUE)
-    
-    
-    # Cleaning and grouping the data ----
-    Total_Crime <- separate(Total_Crime, DateReported, c("YEAR","MONTH","DAY"), sep="-", remove = FALSE)
-    Total_Crime <- separate(Total_Crime, DateReported, c("DAY","etc."), sep="T", remove = FALSE)
-    TOTAL_COUNTS <- Total_Crime %>% group_by(DAY) %>% tally()
-    TOTAL_COUNTS <- separate(TOTAL_COUNTS, DAY, c("YEAR", "MONTH", "NEW_DAY"), sep="-", remove = FALSE)
-    names(TOTAL_COUNTS)[names(TOTAL_COUNTS) == "DAY"] <- "stringDate"
-    names(TOTAL_COUNTS)[names(TOTAL_COUNTS) == "NEW_DAY"] <- "DAY"
-    SPORTS_COUNTS <- Sports_Crime %>% group_by(event_date) %>% tally()
-    SPORTS_COUNTS <- separate(SPORTS_COUNTS, event_date, c("YEAR", "MONTH", "DAY"), sep="-", remove = FALSE)
-    TOTAL_COUNTS$Date <- with(TOTAL_COUNTS, paste0(YEAR, MONTH, DAY))
-    SPORTS_COUNTS$Date <- with(SPORTS_COUNTS, paste0(YEAR, MONTH, DAY))
-    FINAL_DF <- TOTAL_COUNTS
-    FINAL_DF$Game.Day <- ifelse(FINAL_DF$Date %in% SPORTS_COUNTS$Date, TRUE, FALSE)
     
     # Plotting ----
     TestFilter = (as.Date(FINAL_DF$YEAR) == input$yearLocator) & (as.Date(FINAL_DF$MONTH) == input$monthLocator)
