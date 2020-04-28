@@ -88,7 +88,8 @@ ui = fluidPage(
                                         choices = c(sort(as.character(FINAL_DF$YEAR))), width = "220px")
                      ))
                    ),
-                   mainPanel( plotOutput("barPlot") ) ) 
+                   mainPanel( plotOutput("barPlot"),
+                              textOutput("meanValues")) ) 
           )        
     ))
 
@@ -133,6 +134,13 @@ server = function(input, output) ({
       ggplot(data = filteredDf, 
              aes(x=DAY,  y = n, fill = Game.Day)) + geom_bar(stat="identity")
         })
+  })
+  output$meanValues <- renderText({
+    TestFilter2 = (FINAL_DF$YEAR == input$yearLocator) & (FINAL_DF$MONTH == input$monthLocator)
+    filteredDf2 = FINAL_DF[TestFilter2,]
+    
+    
+    paste('Mean for non-game days:',as.character(round(mean(filteredDf2$n[filteredDf2$Game.Day == FALSE]), digits = 2)), ' | Mean for game days:', as.character(round(mean(filteredDf2$n[filteredDf2$Game.Day]), digits = 2)))
   })
   })
 # Final Function Call to Generate RShiny Page----
