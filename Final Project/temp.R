@@ -75,7 +75,7 @@ ui = fluidPage(
           # Tab 2: Comparison of Reported Crimes to Monthly Average 
           tabPanel("Monthly Average Comparison", fluid = TRUE, icon = icon("calendar"), 
                    # Tab 1: Map of Reported Incidents on Game Day
-                   titlePanel("Map of Reported Crimes in Charlottesville on Game Days"),
+                   titlePanel("Comparison of Sporting Days to Regular Days"),
                    sidebarLayout( sidebarPanel( 
                      fluidRow(column(5, 
                                      # Selection for month

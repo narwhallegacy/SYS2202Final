@@ -7,13 +7,12 @@ Misc. : contains miscellaneous files, both datasets and R-programs, used in deve
 --------
 R Files
 --------
-CrimeCategorization :
-DataCleaning : 
-ShinyInputFunctions :
-VisualApp : 
+CrimeCategorization : Categorizes the crime types into broader umbrella categories
+DataCleaning : Main functions that take in various dataframes and returns Sports_Crime dataframe
+VisualApp : Uses the Sports_Crime dataframe to create RShiny application interface
 
 --------
 CSV / Excel Files
 --------
-Sports_Crime :
-crime_data_categorized : 
+Sports_Crime : The first version of data to be used for RShiny
+crime_data_categorized : The newest version of data used for the RShiny application
